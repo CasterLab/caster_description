@@ -1,2 +1,2 @@
 # Caster
-This is the caster agv ros stack
+URDF package for Caster robot.
