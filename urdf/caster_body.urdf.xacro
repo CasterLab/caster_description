@@ -12,7 +12,7 @@
       <visual>
           <origin xyz="0 0 0" rpy="0 0 0" />
           <geometry>
-            <mesh filename="package://caster_body_description/mesh/caster_body_fixed.stl" />
+            <mesh filename="package://caster_description/mesh/caster_body_fixed.stl" />
           </geometry>
           <material name="">
             <color rgba="0.3 0.3 0.3 1.0" />
@@ -24,8 +24,8 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://caster_body_description/mesh/caster_body_part.stl" />
-          <!-- <mesh filename="package://caster_body_description/mesh/caster_body_part_up.stl" /> -->
+          <mesh filename="package://caster_description/mesh/caster_body_part.stl" />
+          <!-- <mesh filename="package://caster_description/mesh/caster_body_part_up.stl" /> -->
         </geometry>
         <material name="">
           <color rgba="0.3 0.3 0.3 1.0" />
