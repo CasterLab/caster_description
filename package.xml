@@ -18,6 +18,9 @@
   <build_depend>roslaunch</build_depend>
 
   <depend>urdf</depend>
+  <depend>rviz</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher_guiM</depend>
 
   <export>
   </export>
