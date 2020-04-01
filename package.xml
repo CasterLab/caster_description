@@ -20,7 +20,7 @@
   <depend>urdf</depend>
   <depend>rviz</depend>
   <depend>robot_state_publisher</depend>
-  <depend>joint_state_publisher_guiM</depend>
+  <depend>joint_state_publisher_gui</depend>
 
   <export>
   </export>
