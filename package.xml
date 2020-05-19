@@ -22,6 +22,8 @@
   <depend>robot_state_publisher</depend>
   <depend>joint_state_publisher_gui</depend>
 
+  <depend>caster_viz</depend>
+
   <export>
   </export>
 </package>
