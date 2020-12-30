@@ -1,0 +1,85 @@
+<?xml version = "1.0"?>
+<robot name = "caster_body" xmlns:xacro = "http://www.ros.org/wiki/xacro">
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+  <xacro:macro name="caster_body" params="parent *origin">
+    <joint name="caster_body_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="caster_body_link"/>
+    </joint>
+
+    <link name="caster_body_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://caster_description/mesh/body_v3/zms_fixed_v4-urdf.stl" />
+        </geometry>
+        <material name="">
+          <color rgba="0.3 0.3 0.3 1.0" />
+        </material>
+      </visual>
+      <inertial>
+        <origin xyz="-0.0672 0.0063 0.3345" rpy="0 0 0"/>
+        <mass value="6.89" />
+        <inertia ixx="3.6124860e+02" ixy="-4.9990680e+00" ixz="5.5006418e+01" 
+                 iyy="3.3695476e+02" iyz="9.4443022e+00" 
+                 izz="9.0452091e+01" />
+      </inertial>
+    </link>
+
+    <link name="caster_body_part_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://caster_description/mesh/body_v3/zms_move_v4-urdf.stl" />
+        </geometry>
+        <material name="">
+          <color rgba="0.3 0.3 0.3 1.0" />
+        </material>
+      </visual>
+      <inertial>
+        <origin xyz="-0.06438  0.0022 0.3112" rpy="0 0 0"/>
+        <mass value="1.27" />
+        <inertia ixx="6.9512981e+02" ixy="2.8986876e-01" ixz="1.7605346e+01" 
+                 iyy="6.7089589e+02" iyz="7.0696858e+00" 
+                 izz="4.7911060e+01" />
+      </inertial>
+    </link>
+    
+    <joint name="caster_body_connected_joint" type="prismatic">
+      <child link="caster_body_part_link" />
+      <parent link="caster_body_link" />
+      <origin xyz="0.0065 0 0.016" rpy="0 0 0" />
+      <axis xyz="0 0 1" rpy="0 0 0"/>
+      <limit lower="0.0" upper="0.41" effort="0.0" velocity="0.0"/>
+    </joint> 
+
+
+    <link name="caster_body_arm_mount_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://caster_description/mesh/body_v3/zms-kinova-sup_v4-urdf.stl" />
+        </geometry>
+        <material name="">
+          <color rgba="0.3 0.3 0.3 1.0" />
+        </material>
+      </visual>
+    </link>
+
+    <joint name="caster_body_arm_mount_joint" type="fixed">
+      <child link="caster_body_arm_mount_link" />
+      <parent link="caster_body_part_link" />
+      <origin xyz="-0.005 0.075 0.14" rpy="0 0 0" />
+    </joint>
+
+    <!-- neck mount -->
+    <link name="caster_body_head_link" />
+    <joint name="caster_body_head_joint" type="fixed">
+      <child link="caster_body_head_link" />
+      <parent link="caster_body_part_link" />
+      <origin xyz="-0.0349 0 0.678" rpy="0 0 0" />
+    </joint>
+
+  </xacro:macro>
+</robot>
