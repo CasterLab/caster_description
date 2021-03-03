@@ -178,6 +178,13 @@
     <child link="base_link" />
   </joint>
 
+  <link name="top_plate_link" />
+  <joint name="top_plate_joint" type="fixed">
+    <origin xyz="0 0 0.266" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="top_plate_link" />
+  </joint>
+
   <!-- IMU link -->
   <link name="imu_link" />
 
